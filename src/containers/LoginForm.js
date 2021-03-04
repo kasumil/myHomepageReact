@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeInput, inintialForm } from "../modules/login";
-import LoginView from "../components/LoginView";
+import AuthView from "../components/common/AuthView";
 
 
 const LoginForm = () => {
@@ -9,7 +9,6 @@ const LoginForm = () => {
   const { form } = useSelector(({ login }) => ({
     form: login.login
   }));
-  console.log(form);
 
   //인풋 변경 이벤트 핸들러
   const onChange = (e) => {
@@ -39,7 +38,7 @@ const LoginForm = () => {
   }, [dispatch]);
 
   return (
-    <LoginView
+    <AuthView
       type='login'
       form={form}
       onChange={onChange}
@@ -47,7 +46,5 @@ const LoginForm = () => {
     />
   );
 };
-
-
 
 export default LoginForm;

@@ -25,6 +25,15 @@ const NavListItem = styled.li`
   margin: 1rem;
 `;
 
+const AuthBlock = styled.div`
+  margin-right: 1rem;
+
+  .link {
+    text-decoration: none;
+  }
+`;
+
+
 const Nav = () => {
   return (
     <NavBlock >
@@ -49,6 +58,11 @@ const Nav = () => {
           Youtube
         </NavListItem>
       </NavListBundle>
+      <AuthBlock>
+        <Link to='/login' className='link'>로그인</Link>
+        &nbsp;/&nbsp;
+        <Link to='/register' className='link'>회원가입</Link>
+      </AuthBlock>
     </NavBlock>
   );
 };
