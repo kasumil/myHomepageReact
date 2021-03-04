@@ -22,7 +22,9 @@ const initialState = {
   login: {
     username: '',
     password: '',
-  }
+  },
+  auth: null,
+  authError: null
 } // 초기 값
 
 const login = handleActions(
