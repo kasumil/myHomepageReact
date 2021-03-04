@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Menu from './Menu';
@@ -33,8 +33,12 @@ const AuthBlock = styled.div`
   }
 `;
 
+const Userid = styled.div`
+
+`;
 
 const Nav = () => {
+  const [userId, setUserId] = useState();
   return (
     <NavBlock >
       <Menu />
@@ -43,7 +47,7 @@ const Nav = () => {
           <Link to="/">송수호의 사이트입니다</Link>
         </NavListItem>
         <NavListItem>
-          <Link to="/Intro">소개</Link>
+          <Link to="/intro">소개</Link>
         </NavListItem>
         <NavListItem>
           사진
@@ -58,11 +62,16 @@ const Nav = () => {
           Youtube
         </NavListItem>
       </NavListBundle>
-      <AuthBlock>
-        <Link to='/login' className='link'>로그인</Link>
-        &nbsp;/&nbsp;
-        <Link to='/register' className='link'>회원가입</Link>
-      </AuthBlock>
+      {(!userId)
+      ? <AuthBlock>
+          <Link to='/login' className='link'>로그인</Link>
+          &nbsp;/&nbsp;
+          <Link to='/register' className='link'>회원가입</Link>
+        </AuthBlock>
+      : <Userid>
+          {userId}
+        </Userid>
+      }
     </NavBlock>
   );
 };
