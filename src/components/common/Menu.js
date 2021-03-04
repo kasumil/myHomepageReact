@@ -31,8 +31,7 @@ const ModalContent = styled.li`
 
 const ModalState = styled.button`
   height: 2rem;
-  margin-top: 0.7rem;
-  margin-left: 1rem;
+  margin: 0.7rem 0 0.7rem 1rem;
 `;
 
 

@@ -27,9 +27,15 @@ const NavListItem = styled.li`
 
 const AuthBlock = styled.div`
   margin-right: 1rem;
+  margin-top: 0.5rem;
 
   .link {
     text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    right: 0;
   }
 `;
 
@@ -50,7 +56,7 @@ const Nav = () => {
           <Link to="/intro">소개</Link>
         </NavListItem>
         <NavListItem>
-          사진
+          <Link to="/photo">사진</Link>
         </NavListItem>
         <NavListItem>
           GIT
